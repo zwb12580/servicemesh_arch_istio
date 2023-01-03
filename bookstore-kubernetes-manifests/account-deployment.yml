@@ -18,7 +18,7 @@ spec:
       serviceAccountName: book-admin
       containers:
         - name: account
-          image: icyfenix/bookstore-istio-domain-account
+          image: zwb12580/bookstore-istio-domain-account
           ports:
             - name: http-server
               containerPort: 80

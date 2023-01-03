@@ -18,7 +18,7 @@ spec:
       serviceAccountName: book-admin
       containers:
         - name: payment
-          image: icyfenix/bookstore-istio-domain-payment
+          image: zwb12580/bookstore-istio-domain-payment
           ports:
             - name: http-server
               containerPort: 80

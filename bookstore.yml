@@ -11,7 +11,7 @@ metadata:
   name: book-admin
   namespace: bookstore-servicemesh
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: book-admin-role
@@ -32,7 +32,7 @@ rules:
   - get
   - watch
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: book-admin-role-binding
@@ -286,7 +286,7 @@ spec:
           value: "80"
         - name: JAVA_TOOL_OPTIONS
           value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
-        image: icyfenix/bookstore-istio-domain-account
+        image: zwb12580/bookstore-istio-domain-account
         name: account
         ports:
         - containerPort: 80
@@ -326,7 +326,7 @@ spec:
           value: "80"
         - name: JAVA_TOOL_OPTIONS
           value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
-        image: icyfenix/bookstore-istio-domain-authentication
+        image: zwb12580/bookstore-istio-domain-authentication
         name: authentication
         ports:
         - containerPort: 80
@@ -366,7 +366,7 @@ spec:
           value: "80"
         - name: JAVA_TOOL_OPTIONS
           value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
-        image: icyfenix/bookstore-istio-domain-frontend
+        image: zwb12580/bookstore-istio-domain-frontend
         name: gateway
         ports:
         - containerPort: 80
@@ -406,7 +406,7 @@ spec:
           value: "80"
         - name: JAVA_TOOL_OPTIONS
           value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
-        image: icyfenix/bookstore-istio-domain-payment
+        image: zwb12580/bookstore-istio-domain-payment
         name: payment
         ports:
         - containerPort: 80
@@ -446,7 +446,7 @@ spec:
           value: "80"
         - name: JAVA_TOOL_OPTIONS
           value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
-        image: icyfenix/bookstore-istio-domain-warehouse
+        image: zwb12580/bookstore-istio-domain-warehouse
         name: warehouse
         ports:
         - containerPort: 80
